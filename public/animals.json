@@ -1,15 +1,15 @@
 [
-    { "name": "Fox", "src": "https://i.postimg.cc/90VL1Qwg/fox.png", "category": "Land Animal" },
-    { "name": "Bee", "src": "https://i.postimg.cc/1zn73TZB/bee.png", "category": "Insect" },
-    { "name": "Horse", "src": "https://i.postimg.cc/sxcwLCpj/horse.png", "category": "Land Animal" },
-    { "name": "Butterfly", "src": "https://i.postimg.cc/W4BWFnNv/butterfly.png", "category": "Insect" },
-    { "name": "Cockatoo", "src": "https://i.postimg.cc/Sxttq4Hj/cockatoo.png", "category": "Bird" },
-    { "name": "Ladybird", "src": "https://i.postimg.cc/SQ7TRCHB/lady-bird.png", "category": "Insect" },
-    { "name": "Tuna", "src": "https://i.postimg.cc/R0HGBHcb/tuna.png", "category": "Fish" },
-    { "name": "Pomfret", "src": "https://i.postimg.cc/ZKwwFZbj/pomfret.png", "category": "Fish" },
-    { "name": "Sparrow", "src": "https://i.postimg.cc/GmNzVQsy/sparrow.png", "category": "Bird" },
-    { "name": "Red Fish", "src": "https://i.postimg.cc/T3hCtShx/red-fish.png", "category": "Fish" },
-    { "name": "Elephant", "src": "https://i.postimg.cc/qR2m83qC/elephant.png", "category": "Land Animal" },
-    { "name": "Phoenix", "src": "https://i.postimg.cc/SNSZMjhJ/phoenix.png", "category": "Bird" }
+    { "name": "Fox", "image": "https://i.postimg.cc/90VL1Qwg/fox.png", "category": "Land Animal" },
+    { "name": "Bee", "image": "https://i.postimg.cc/1zn73TZB/bee.png", "category": "Insect" },
+    { "name": "Horse", "image": "https://i.postimg.cc/sxcwLCpj/horse.png", "category": "Land Animal" },
+    { "name": "Butterfly", "image": "https://i.postimg.cc/W4BWFnNv/butterfly.png", "category": "Insect" },
+    { "name": "Cockatoo", "image": "https://i.postimg.cc/Sxttq4Hj/cockatoo.png", "category": "Bird" },
+    { "name": "Ladybird", "image": "https://i.postimg.cc/SQ7TRCHB/lady-bird.png", "category": "Insect" },
+    { "name": "Tuna", "image": "https://i.postimg.cc/R0HGBHcb/tuna.png", "category": "Fish" },
+    { "name": "Pomfret", "image": "https://i.postimg.cc/ZKwwFZbj/pomfret.png", "category": "Fish" },
+    { "name": "Sparrow", "image": "https://i.postimg.cc/GmNzVQsy/sparrow.png", "category": "Bird" },
+    { "name": "Red Fish", "image": "https://i.postimg.cc/T3hCtShx/red-fish.png", "category": "Fish" },
+    { "name": "Elephant", "image": "https://i.postimg.cc/qR2m83qC/elephant.png", "category": "Land Animal" },
+    { "name": "Phoenix", "image": "https://i.postimg.cc/SNSZMjhJ/phoenix.png", "category": "Bird" }
   ]
   

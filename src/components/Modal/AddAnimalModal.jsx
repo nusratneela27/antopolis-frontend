@@ -3,6 +3,10 @@
 import { useState } from "react";
 import {
   Button,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
   Input,
   Modal,
   ModalBody,
@@ -14,6 +18,7 @@ import {
 const AddAnimalModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [animalName, setAnimalName] = useState("");
+  const [category, setCategory] = useState("");
   const [file, setFile] = useState(null);
 
   const handleOpen = () => {
@@ -24,17 +29,18 @@ const AddAnimalModal = () => {
     setIsOpen(false);
   };
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    const name = event.target.name.value;
+
+    // Access the name and category directly from the state
+    const name = animalName;
     const image = event.target.image.files[0];
-    
+
     // Upload the image to imgbb
     const formData = new FormData();
     formData.append("image", image);
     const url = `https://api.imgbb.com/1/upload?key=${process.env.NEXT_PUBLIC_IMGBB_KEY}`;
-    
+
     fetch(url, {
       method: "POST",
       body: formData,
@@ -42,13 +48,13 @@ const AddAnimalModal = () => {
       .then((res) => res.json())
       .then((imageData) => {
         const imageUrl = imageData.data.display_url;
-  
-        // Prepare animal data
+
         const animalData = {
           name: name,
           image: imageUrl,
+          category: category,
         };
-  
+
         // Post the data to the database
         return fetch("http://localhost:5000/animals", {
           method: "POST",
@@ -65,36 +71,9 @@ const AddAnimalModal = () => {
       .catch((error) => {
         console.error("Error adding animal:", error);
       });
-  
+
     handleClose();
   };
-  
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const name = event.target.name.value;
-  //   const image = event.target.image.files[0];
-  //   const formData = new FormData();
-  //   formData.append("image", image);
-  //   const url = `https://api.imgbb.com/1/upload?key=${
-  //     process.env.NEXT_PUBLIC_IMGBB_KEY
-  //   }`;
-  //   fetch(url, {
-  //     method: "POST",
-  //     body: formData,
-  //   })
-  //     .then((res) => res.json())
-  //     .then((imageData) => {
-  //       const imageUrl = imageData.data.display_url;
-  //       const animalData = {
-  //         name: name,
-  //         image: imageUrl,
-  //       };
-
-
-  //       console.log(animalData);
-  //     });
-  //   handleClose();
-  // };
 
   const handleFileChange = (image) => {
     setFile(image.name);
@@ -128,6 +107,21 @@ const AddAnimalModal = () => {
                   handleFileChange(event.target.files[0]);
                 }}
               />
+              <Dropdown>
+                <DropdownTrigger>
+                  <Button>{category || "Select Category"}</Button>
+                </DropdownTrigger>
+                <DropdownMenu
+                  aria-label="Select Category"
+                  className="text-black"
+                  onAction={(key) => setCategory(key)} 
+                >
+                  <DropdownItem key="Land Animal">Land Animal</DropdownItem>
+                  <DropdownItem key="Bird">Bird</DropdownItem>
+                  <DropdownItem key="Fish">Fish</DropdownItem>
+                  <DropdownItem key="Insect">Insect</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
             </ModalBody>
             <ModalFooter>
               <Button type="submit" fullWidth className="bg-black text-white">
