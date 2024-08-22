@@ -39,8 +39,9 @@ const AddCategory = () => {
           <ModalHeader className="text-black">Add Category</ModalHeader>
           <ModalBody>
             <Input
+              type="text"
+              label="Name"
               fullWidth
-              placeholder="Name"
               value={animalCategory}
               onChange={(e) => setAnimalCategory(e.target.value)}
             />

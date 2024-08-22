@@ -14,6 +14,7 @@ import {
 const AddAnimalModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [animalName, setAnimalName] = useState("");
+  const [file, setFile] = useState(null)
 
   const handleOpen = () => {
     setIsOpen(true);
@@ -21,10 +22,20 @@ const AddAnimalModal = () => {
 
   const handleClose = () => {
     setIsOpen(false);
+    setAnimalName("");
+    setFile(null);
+  };
+
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      setFile(selectedFile);
+    }
   };
 
   const handleSubmit = () => {
     console.log("New Animal Name:", animalName);
+    console.log("Selected File:", file);
     handleClose();
   };
 
@@ -39,10 +50,17 @@ const AddAnimalModal = () => {
           <ModalHeader className="text-black">Add Animal</ModalHeader>
           <ModalBody>
             <Input
+              type="text"
+              label="Animal Name"
               fullWidth
-              placeholder="Add Animal"
               value={animalName}
               onChange={(e) => setAnimalName(e.target.value)}
+            />
+            <Input
+              type="file"
+              label="Image"
+              fullWidth
+              onChange={handleFileChange}
             />
           </ModalBody>
           <ModalFooter>
