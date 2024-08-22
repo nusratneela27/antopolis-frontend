@@ -39,7 +39,7 @@ const Animals = () => {
         {filteredAnimals.map((animal) => (
           <div key={animal._id} className="flex flex-col items-center">
             <div className="border border-zinc-900 rounded-lg bg-zinc-950 flex items-center justify-center h-[191px] w-[160px]">
-              <Image alt={animal.name} src={animal.src} height={100} width={100} />
+              <Image alt={animal.name} src={animal.image} height={100} width={100} />
             </div>
             <h1 className="mt-4 uppercase">{animal.name}</h1>
           </div>
