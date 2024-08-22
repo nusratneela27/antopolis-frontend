@@ -56,13 +56,17 @@ const AddAnimalModal = () => {
         };
 
         // Post the data to the database
-        return fetch("https://antopolies-backend.vercel.app/animals", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(animalData),
-        });
+        return fetch(
+          // "https://antopolies-backend.vercel.app/animals"
+          `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/animals`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(animalData),
+          }
+        );
       })
       .then((response) => response.json())
       .then((data) => {
@@ -98,7 +102,7 @@ const AddAnimalModal = () => {
                 value={animalName}
                 onChange={(e) => setAnimalName(e.target.value)}
               />
-              <Input
+              {/* <Input
                 type="file"
                 name="image"
                 label="Image"
@@ -106,7 +110,21 @@ const AddAnimalModal = () => {
                 onChange={(event) => {
                   handleFileChange(event.target.files[0]);
                 }}
-              />
+              /> */}
+
+              <div className="flex justify-between items-center text-black rounded-lg px-3 py-2 bg-gray-100">
+                <h1>Image</h1>
+                <div className="w-20">
+                  <Input
+                    type="file"
+                    name="image"
+                    onChange={(event) => {
+                      handleFileChange(event.target.files[0]);
+                    }}
+                  />
+                </div>
+              </div>
+
               <Dropdown>
                 <DropdownTrigger>
                   <Button>{category || "Select Category"}</Button>

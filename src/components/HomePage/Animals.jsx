@@ -11,7 +11,10 @@ const Animals = () => {
 
   useEffect(() => {
     const fetchAnimals = async () => {
-      const res = await fetch("https://antopolies-backend.vercel.app/animals");
+      const res = await fetch(
+        // "https://antopolies-backend.vercel.app/animals"
+        `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/animals`
+      );
       const data = await res.json();
       setAnimals(data);
       setFilteredAnimals(data);
