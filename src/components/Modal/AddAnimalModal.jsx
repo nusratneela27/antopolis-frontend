@@ -56,7 +56,7 @@ const AddAnimalModal = () => {
         };
 
         // Post the data to the database
-        return fetch("http://localhost:5000/animals", {
+        return fetch("https://antopolies-backend.vercel.app/animals", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -114,7 +114,7 @@ const AddAnimalModal = () => {
                 <DropdownMenu
                   aria-label="Select Category"
                   className="text-black"
-                  onAction={(key) => setCategory(key)} 
+                  onAction={(key) => setCategory(key)}
                 >
                   <DropdownItem key="Land Animal">Land Animal</DropdownItem>
                   <DropdownItem key="Bird">Bird</DropdownItem>
