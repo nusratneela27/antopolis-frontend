@@ -1,7 +1,6 @@
 "use client"; 
 
 import { useState, useEffect } from "react";
-import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import Buttons from "./Buttons";
 
@@ -31,52 +30,6 @@ const Animals = () => {
 
   return (
     <div>
-      {/* <div className="lg:flex justify-between pt-28 pb-20">
-        <div className="space-x-7">
-          <Button
-            radius="full"
-            color={selectedCategory === "Land Animal" ? "success" : ""}
-            variant="bordered"
-            onPress={() => handleFilter("Land Animal")}
-          >
-            Land Animal
-          </Button>
-          <Button
-            radius="full"
-            color={selectedCategory === "Bird" ? "success" : ""}
-            variant="bordered"
-            onPress={() => handleFilter("Bird")}
-          >
-            Bird
-          </Button>
-          <Button
-            radius="full"
-            color={selectedCategory === "Fish" ? "success" : ""}
-            variant="bordered"
-            onPress={() => handleFilter("Fish")}
-          >
-            Fish
-          </Button>
-          <Button
-            radius="full"
-            color={selectedCategory === "Insect" ? "success" : ""}
-            variant="bordered"
-            onPress={() => handleFilter("Insect")}
-          >
-            Insect
-          </Button>
-        </div>
-
-        <div className="space-x-7">
-          <Button radius="full" color="" variant="bordered">
-            Add Animal
-          </Button>
-          <Button radius="full" color="" variant="bordered">
-            Add Category
-          </Button>
-        </div>
-      </div> */}
-
       <Buttons
          selectedCategory={selectedCategory}
         handleFilter={handleFilter}
